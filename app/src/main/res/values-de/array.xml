@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="categories">
+        <item>HTC Vive</item>
+        <item>Oculus Rift</item>
+        <item>moiehhhdzrealirt</item>
+        <item>réalité virtuelle</item>
+        <item>Vidéo 360</item>
+    </array>
+
+    <array name="identifiants">
+        <item>htc-vive</item>
+        <item>oculus-rift</item>
+        <item>realite-augmentee</item>
+        <item>realite-virtuelle</item>
+        <item>video-360</item>
+    </array>
+
+</resources>

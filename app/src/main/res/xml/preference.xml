@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference
+        android:key="notif"
+        android:enabled="true"
+        android:title="Notifications"
+        android:summaryOn="Notifications activées"
+        android:summaryOff="Notifications désactivées"/>
+
+    <MultiSelectListPreference
+        android:key="categories"
+        android:title="Catégories"
+        android:entries="@array/categories"
+        android:entryValues="@array/identifiants"
+        android:defaultValue="@array/identifiants">
+
+    </MultiSelectListPreference>
+</PreferenceScreen>
