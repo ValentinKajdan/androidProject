@@ -1,6 +1,8 @@
 package com.example.valentinkajdan.firstappli;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.Nullable;
@@ -38,6 +40,7 @@ class FragmentList extends Fragment implements OnListItemClickListener{
         final RecyclerView rView = (RecyclerView) view.findViewById(R.id.recyclerview);
         rView.setLayoutManager(new LinearLayoutManager(getContext()));
 
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://www.goglasses.fr/")
                 .addConverterFactory(
@@ -52,6 +55,16 @@ class FragmentList extends Fragment implements OnListItemClickListener{
             public void onResponse(Call<ResponseLastPosts> call, Response<ResponseLastPosts> response) {
                 ArrayList<Post> lastPosts = response.body().posts;
                 rView.setAdapter(new MyAdapter(lastPosts, FragmentList.this));
+
+                //Insert des nouveaux articles en base
+                SQLiteDatabase db = new
+                        DatabaseHelper(getContext()).getWritableDatabase();
+
+                ContentValues cv = new ContentValues();
+                cv.put("message","blabla");
+                db.insert("post", null, cv);
+                db.query("post", lastPosts, )
+                db.close();
             }
 
             @Override

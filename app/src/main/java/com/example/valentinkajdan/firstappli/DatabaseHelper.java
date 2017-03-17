@@ -11,12 +11,24 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private final String CREATE_TABLE =
-            "CREATE TABLE table (" +
+            "CREATE TABLE post (" +
                     "ID INTEGER PRIMARY KEY AUTOINCREMENT," +
-                    "MESSAGE TEXT);";
+                    "TYPE TEXT," +
+                    "SLUG TEXT," +
+                    "URL TEXT," +
+                    "TITLE TEXT" +
+                    "TITLE_PLAIN TEXT," +
+                    "CONTENT TEXT," +
+                    "EXCERPT TEXT," +
+                    "DATE TEXT," +
+                    "MODIFIED TEXT," +
+                    "CATEGORY TEXT," +
+                    "TAGS TEXT," +
+                    "AUTHOR TEXT);";
 
-    private final String DB_NAME = "database.db";
-    private final int DB_VERSION = 1;
+    private static final String DB_NAME = "database.db";
+    private static final int DB_VERSION = 1;
+
     public DatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
